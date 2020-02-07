@@ -1,72 +1,40 @@
 <template>
   <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        keita
-      </h1>
-      <h2 class="subtitle">
-        nuxtを初めて使ってみた
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+    <div v-if="isActive === true" v-on:click="ao()" class="hoge">{{ msg }}</div>
+    <div v-if="isActive === false" v-on:click="ao()" class="piyo">カキクケコ</div>
   </div>
 </template>
 
-<script>
-import Logo from '~/components/Logo.vue'
-
-export default {
-  components: {
-    Logo
-  }
-}
-</script>
-
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.hoge {
+  width: 500px;
+  height: 500px;
+  background-color: aqua;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.piyo {
+  width: 500px;
+  height: 500px;
+  background-color: rgb(255, 0, 0);
 }
 </style>
+
+<script>
+export default {
+  data() {
+    return {
+      msg: "アイウエオ",
+      isActive: true
+    };
+  },
+  methods: {
+    ao() {
+      if (this.isActive === true) {
+        this.isActive = false;
+      } else {
+        this.isActive = true;
+      }
+    }
+  }
+};
+</script>
