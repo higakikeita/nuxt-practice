@@ -7,9 +7,10 @@
 
 <style>
 .hoge {
-  width: 500px;
-  height: 500px;
-  background-color: aqua;
+  width: 100%;
+  height: 1000px;
+
+  background-color: #feffefe;
 }
 
 .piyo {
@@ -23,7 +24,7 @@
 export default {
   data() {
     return {
-      msg: "アイウエオ",
+      msg: "Portfolio",
       isActive: true
     };
   },
